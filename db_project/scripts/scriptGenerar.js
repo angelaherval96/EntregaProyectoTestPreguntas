@@ -20,6 +20,7 @@ let botones = document.querySelectorAll(".btn"),
     tituloNivel = document.querySelectorAll(".nivel__title");
 
 /*Variables elementos individuales */
+let imagenInicio = document.querySelector(".img__container");
 let btnGenerar = document.querySelector(".btnGenerar");
 
 /*Variables de control */
@@ -86,6 +87,7 @@ links.forEach((link) => {
         ocultar(mostrarContainer);
         mostrar(generarContainer);
     }
+    ocultar(imagenInicio);
     });
 });
 /*Funciones de los botones según el grado (Primaria, Secundaria, etc)*/
@@ -147,11 +149,13 @@ titulosAsignaturas.forEach((asignatura) => {
 })
 /*SELECCION DE LA CANTIDAD DE PREGUNTAS Y MOSTRAR LA ASIGNATURA JUNTO CON EL TEMA SELECCIONADO */
 temaAsignatura.forEach((tema) => {
+
     tema.addEventListener("click", () => {
 
         /*Variables para obtener los id y poder ocultar los elementos que no correspondan al tema, asignatura y nivel seleccionado */
         let idPadre = tema.parentElement.getAttribute("id"),
             idAbuelo = document.querySelector(`#${idPadre}`).parentElement.getAttribute("id"),
+
             elementoSiguiente = document.querySelector("#niveles__grado");
 
         //Eliminamos la imagen, usamos el elemento abuelo para apuntar a la imagen del contenedor seleccionado
@@ -159,7 +163,9 @@ temaAsignatura.forEach((tema) => {
 
         //Almacenamos el valor del tema en la variable para generar el examen según el tema seleccionado.
         temaExamen = tema.innerHTML;
+
         asignaturaExamen = document.querySelector(`#${idPadre}`).previousElementSibling.querySelector(".asignatura__name").innerHTML;
+
         nivelExamen = document.querySelector(`#${idAbuelo}`).parentElement.querySelector(".nivel__title").innerHTML;
         
         /*Almacenamos temaExamen en localStorage para poder usarla en otra ventana usando otro script */
@@ -175,6 +181,7 @@ temaAsignatura.forEach((tema) => {
 
         //Ocultamos todos los elementos que no correspondan al tema clicado, nos valemos de la nueva clase que le hemos dado
         for(let i=0; i<temaAsignatura.length; i++) {
+
             let comparacion = temaAsignatura[i].className.indexOf("elementoEditar");
 
             if(comparacion === -1) {
@@ -207,7 +214,9 @@ const handleInput = (input, btnEnviar, btnEditar, field) => {
     let inputValue = Number(input.value);
 
     if(field === 'numPreguntas') {
+
         if((inputValue > 0) && (inputValue <= 20)) {
+
             numeroTotalPreguntas = inputValue;
             localStorage.setItem('numPreguntas', numeroTotalPreguntas);
             enviarElemento(input, btnEditar, btnEnviar);
@@ -217,8 +226,10 @@ const handleInput = (input, btnEnviar, btnEditar, field) => {
                 mostrar(btnsEnviar[1]);
                 numOpcionesMostrado = true; //Marcar que se mostró numOpciones
             }
+
             limpiar(inputs[1]);
             siguienteSeccion(numeroPreguntas);
+
         } else {
             limpiar(input);
         }
@@ -229,6 +240,7 @@ const handleInput = (input, btnEnviar, btnEditar, field) => {
             localStorage.setItem('numRespuestas', numeroTotalRespuestas);
             enviarElemento(input, btnEditar, btnEnviar);
             mostrar(btnGenerar);
+
             siguienteSeccion(numeroRespuestas);
         } else {
             limpiar(input);

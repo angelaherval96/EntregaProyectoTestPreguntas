@@ -79,6 +79,7 @@ li {
     align-items: center;
 }
 .link {
+    font-size: 2.8rem;
     font-weight: 600;
     padding: 1rem;
 }
@@ -87,7 +88,9 @@ li {
     background-color: var(--secundarioOscuro);
     border-radius: 0.5rem;
 }
-
+.img__container {
+    margin: 5rem auto;
+}
 /*CARDS SECTION*/
 .cards {
     flex-direction: column;
@@ -128,7 +131,7 @@ li {
 .btn:hover, .btnEditar:hover, .btnEnviar:hover, .btnGenerar:hover {
     color: var(--secundarioClaro);
     background: rgba(254,95,85, 0.5);
-    background: linear-gradient(90deg, rgba(254,95,85,0.75) 40%, rgba(3,181,170,0.75) 100%);
+    /* background: linear-gradient(90deg, rgba(254,95,85,0.75) 40%, rgba(3,181,170,0.75) 100%); */
 }
 /*SECCIÓN ASIGNATURAS*/
 .nivel__contenido {
@@ -180,32 +183,8 @@ li {
     border-radius: 1rem;
     border: 0.2rem solid rgba(2, 52, 54, 0.4);
 }
-@media (min-width: 768px) {
-    .container {
-        width: 98%;
-    }
-    .cards {
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 2rem;
-    }
-    .card__img {
-        display: block;
-        height: 15rem;
-    }
-    .btnEnviar, .btnEditar {
-        width: 20rem;
-    }
-    .btnGenerar {
-        width: 25rem;
-        margin: 0 auto;
-    }
-}
 
 /*PÁGINA EXAMEN GENERADO*/
-/* * {
-    outline: .2rem solid red;
-} */
 .examen__title {
     text-align: center;
     margin-bottom: 2rem;
@@ -217,7 +196,6 @@ li {
     margin: 0 auto;
 }
 .formulario__examen {
-    position: relative;
     width: 95%;
     flex-direction: column;
     box-shadow: 4px 4px 5px 0px rgba(2,52,54,0.15);
@@ -238,6 +216,9 @@ li {
     position: relative;
     display: flex;
     font-size: 1.5rem;
+}
+.selector {
+    display: inline-block;
 }
 .opcion input[type=radio] {
     box-shadow: inset -10px -10px 5px 0px rgba(2,52,54,0.15);
@@ -287,10 +268,8 @@ li {
 
 .btnCorregir {
     cursor: pointer;
-    position: absolute;
-    margin: 5rem 1rem 1rem 5rem;
-    right: 0;
-    bottom: 0;
+    width: 100%;
+    margin: 2rem auto;
     padding: 1.5rem 5rem;
     border: none;
     color: rgba(2, 52, 54, 0.75);
@@ -301,5 +280,31 @@ li {
 .btnCorregir:hover {
     color: var(--secundarioClaro);
     background: rgba(254,95,85, 0.55);
-    background: linear-gradient(90deg, rgba(254,95,85,0.75) 50%, rgba(3,181,170,0.75) 100%);
+    /* background: linear-gradient(90deg, rgba(254,95,85,0.75) 50%, rgba(3,181,170,0.75) 100%); */
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 98%;
+    }
+    .cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 2rem;
+    }
+    .card__img {
+        display: block;
+        height: 15rem;
+    }
+    .btnEnviar, .btnEditar {
+        width: 20rem;
+    }
+    .btnGenerar {
+        width: 25rem;
+        margin: 0 auto;
+    }
+    .btnCorregir {
+        width: 25rem;
+        font-size: 2rem;
+    }
 }
