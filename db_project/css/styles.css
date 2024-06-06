@@ -1,0 +1,305 @@
+:root {
+    --fondosHover: #03B5AA;
+    --letraColor: #023436;
+    --secundarioClaro: #FFECD1;
+    --secundarioOscuro: #FE5F55;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    color: var(--letraColor);
+    flex-direction: column;
+}
+h2 {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+.container {
+    max-width: 120rem;
+    width: 100%;
+    margin: auto;
+    padding: 2rem;
+}
+/*ESTILOS GENERALES*/
+.flex {
+    display: flex;
+}
+.flex-column {
+    flex-direction: column;
+}
+.gap-1 {
+    gap: 1rem;
+}
+.gap-2 {
+    gap: 2rem;
+}
+.space-between {
+    justify-content: space-between;
+}
+.align-items {
+    align-items: center;
+}
+.hidden {
+    display: none;
+}
+.mostrarSeccion {
+    display: block;
+}
+.section {
+    margin-top: 3rem;
+}
+.paragraph, .label {
+    font-size: 1.8rem;
+    color: rgba(2, 52, 54, 0.4);
+    margin-top: 0.7rem;
+}
+/*HERO*/
+.logo {
+    align-items: center;
+    justify-content: center;
+}
+.logo__img {
+    height: 5rem;
+    border-radius: 50%;
+}
+.links {
+    padding: 2rem;
+    align-items: center;
+}
+.link {
+    font-weight: 600;
+    padding: 1rem;
+}
+.link:hover {
+    color: var(--secundarioClaro);
+    background-color: var(--secundarioOscuro);
+    border-radius: 0.5rem;
+}
+
+/*CARDS SECTION*/
+.cards {
+    flex-direction: column;
+    width: 100%;
+}
+.card {
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 236, 209,0.2);
+    border: 0.2rem solid rgba(2, 52, 54, 0.4);
+    border-radius: 2rem;
+    padding: 2rem;
+    flex: 1;
+}
+.card__img {
+    display: none;
+}
+.card__title {
+    margin: 2rem auto;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    text-transform: capitalize;
+}
+.card__paragraph {
+    margin: 0;
+    margin-bottom: 2rem;
+}
+.btn, .btnEnviar, .btnEditar, .btnGenerar {
+    cursor: pointer;
+    border: none;
+    padding: 1.5rem 5rem;
+    background-color: var(--fondosHover);
+    font-weight: 600;
+    border-radius: 5rem;
+    margin-top: auto;
+}
+.btn:hover, .btnEditar:hover, .btnEnviar:hover, .btnGenerar:hover {
+    color: var(--secundarioClaro);
+    background: rgba(254,95,85, 0.5);
+    background: linear-gradient(90deg, rgba(254,95,85,0.75) 40%, rgba(3,181,170,0.75) 100%);
+}
+/*SECCIÓN ASIGNATURAS*/
+.nivel__contenido {
+    padding: 1.2rem;
+    border-radius: 1rem;
+    background-color: rgba(255, 236, 209,0.2);
+    border: 0.2rem solid rgba(2, 52, 54, 0.4);
+    margin-bottom: 1rem;
+}
+.nivel__title:hover {
+    cursor: pointer;
+    color: var(--fondosHover);
+}
+.contenido {
+    margin: 0;
+}
+.asignatura {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.2rem;
+    border-radius: 1rem;
+    background-color: rgba(255, 236, 209,0.2);
+    /* border: 0.2rem solid rgba(2, 52, 54, 0.4); */
+    margin-bottom: 1rem;
+}
+.asignatura__name {
+    margin: 0 2rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.asignatura__contenido, .elementoEditar {
+    margin: 0;
+    margin-left: 1.2rem;
+    font-weight: 600;
+    padding: 1.2rem;
+}
+.elementoEditar:hover {
+    color: var(--secundarioOscuro);
+    cursor: pointer;
+}
+.asignatura__title:hover, .asignatura__contenido:hover {
+    color: rgba(254, 96, 85, 0.5);
+    cursor: pointer;
+}
+/*QUESTIONS' AMOUNT SECTION*/
+.input {
+    outline: none;
+    height: 4rem;
+    border-radius: 1rem;
+    border: 0.2rem solid rgba(2, 52, 54, 0.4);
+}
+@media (min-width: 768px) {
+    .container {
+        width: 98%;
+    }
+    .cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 2rem;
+    }
+    .card__img {
+        display: block;
+        height: 15rem;
+    }
+    .btnEnviar, .btnEditar {
+        width: 20rem;
+    }
+    .btnGenerar {
+        width: 25rem;
+        margin: 0 auto;
+    }
+}
+
+/*PÁGINA EXAMEN GENERADO*/
+/* * {
+    outline: .2rem solid red;
+} */
+.examen__title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.examen__paragraph {
+    color: rgba(2, 52, 54, 0.4);
+    font-size: 1.7rem;
+    text-align: center;
+    margin: 0 auto;
+}
+.formulario__examen {
+    position: relative;
+    width: 95%;
+    flex-direction: column;
+    box-shadow: 4px 4px 5px 0px rgba(2,52,54,0.15);
+    border-radius: 2rem;
+    border: 0.2rem solid rgba(254, 95, 85,.3);
+    padding: 2rem;
+    margin: 2rem auto 5rem;
+}
+.pregunta__texto {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 2rem auto;
+}
+.input__opcion {
+    font-size: 1rem;
+}
+.opcion {
+    position: relative;
+    display: flex;
+    font-size: 1.5rem;
+}
+.opcion input[type=radio] {
+    box-shadow: inset -10px -10px 5px 0px rgba(2,52,54,0.15);
+}
+.opcion input {
+    appearance: none;
+    visibility: hidden;
+}
+.respuesta {
+    margin-left: 2rem;
+}
+.opcion input[type=radio] + .selector {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    height: 1.6rem;
+    width: 1.6rem;
+    border-radius: 50%;
+    border: 0.2rem solid rgba(2, 52, 54, 0.25);
+    box-shadow: inset -2px -2px 5px 0px rgba(254, 95, 80,0.2);
+    margin-right: 2rem;
+}
+.opcion input[type=radio] + .selector:before{
+	content: "";
+	position: absolute;
+	height: 1.1rem;
+    width: 1.1rem;
+	border-radius: 50%;
+	z-index: 1;
+    margin: auto;
+	top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(254, 95, 85,.45);
+	transition: all 0.1s ease; /* propiedad | tiempo | tipo movimiento */
+	transform: scale(0) /* Lo reducimos a 0*/ ;
+	opacity: 0; /* Lo ocultamos*/
+}
+.opcion input[type=radio]:checked + .selector:before {
+	transform: scale(1);
+	opacity: 1;
+}
+.opcion:hover input[type=radio] +:not(:checked) ~ .selector {
+	background: var(--secundarioClaro);
+}
+
+.btnCorregir {
+    cursor: pointer;
+    position: absolute;
+    margin: 5rem 1rem 1rem 5rem;
+    right: 0;
+    bottom: 0;
+    padding: 1.5rem 5rem;
+    border: none;
+    color: rgba(2, 52, 54, 0.75);
+    background-color: rgba(254, 95, 85, 0.55);
+    font-weight: 600;
+    border-radius: 5rem;
+}
+.btnCorregir:hover {
+    color: var(--secundarioClaro);
+    background: rgba(254,95,85, 0.55);
+    background: linear-gradient(90deg, rgba(254,95,85,0.75) 50%, rgba(3,181,170,0.75) 100%);
+}

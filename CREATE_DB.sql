@@ -1,0 +1,117 @@
+CREATE SCHEMA IF NOT EXISTS testpreguntas DEFAULT CHARACTER SET utf8 ;
+USE testpreguntas ;
+
+CREATE TABLE IF NOT EXISTS subjects (
+	id INT AUTO_INCREMENT,
+	name VARCHAR(45) ,
+	PRIMARY KEY (id))
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS contents (
+	id INT AUTO_INCREMENT,
+	name VARCHAR(150) ,
+	subjects_id INT ,
+	PRIMARY KEY (id),
+	FOREIGN KEY (subjects_id)
+	REFERENCES subjects (id)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS grades (
+	id INT AUTO_INCREMENT,
+	name VARCHAR(75),
+	PRIMARY KEY (id))
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS contents_per_level (
+	id INT AUTO_INCREMENT,
+	contents_id INT NOT NULL,
+	grades_id INT NOT NULL,
+	PRIMARY KEY (id),
+	FOREIGN KEY (contents_id)
+	REFERENCES contents (id)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION,
+	FOREIGN KEY (grades_id)
+	REFERENCES grades (id)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS resources (
+	id INT AUTO_INCREMENT,
+	description VARCHAR(200) ,
+	link VARCHAR(250) ,
+	contents_per_grades INT ,
+	PRIMARY KEY (id),
+	FOREIGN KEY (contents_per_grades)
+	REFERENCES contents_per_level (id)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS questions (
+	id INT AUTO_INCREMENT,
+	question VARCHAR(300),
+	contents_per_grades INT,
+	PRIMARY KEY (id),
+	FOREIGN KEY (contents_per_grades)
+	REFERENCES contents_per_level (id)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS answers (
+	id INT AUTO_INCREMENT,
+	text VARCHAR(300) ,
+	is_right TINYINT ,
+	questions_id INT ,
+	PRIMARY KEY (id),
+	FOREIGN KEY (questions_id)
+	REFERENCES questions (id)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS tests (
+	id INT AUTO_INCREMENT,
+	name VARCHAR(150) ,
+	date DATE ,
+	PRIMARY KEY (id))
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS tests_questions (
+	id INT AUTO_INCREMENT,
+	tests_id INT ,
+	questions_id INT ,
+	PRIMARY KEY (id),
+	FOREIGN KEY (tests_id)
+	REFERENCES tests (id)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION,
+	FOREIGN KEY (questions_id)
+	REFERENCES questions (id)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS test_answers (
+	id INT AUTO_INCREMENT,
+	tests_id INT ,
+	tests_questions_id INT ,
+	answers_id INT,
+	PRIMARY KEY (id),
+	FOREIGN KEY (tests_id)
+	REFERENCES tests (id)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION,
+	FOREIGN KEY (tests_questions_id)
+	REFERENCES tests_questions (id)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION,
+	FOREIGN KEY (answers_id)
+	REFERENCES answers (id)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION)
+ENGINE = InnoDB;

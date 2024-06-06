@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzz</title>
+
+    <link rel="icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="flex">
+
+    <header class="hero"> <!--header de la página-->
+
+        <nav class="nav flex space-between">
+
+            <a href="index.html" class="logo flex gap-2">
+                <img src="img/logo.png" alt="logo sql" class="logo__img">
+                <h2 class="logo__nombre">Equipo ª</h2>
+            </a>
+            <div class="links flex gap-2 space-between">
+                <a href="#" id="generar" class="link">Generar</a>
+                <a href="#" id="mostrar" class="link">Mostrar</a>
+            </div>
+        </nav>
+
+    </header>
+
+    <main class="container"> <!--Cuerpo de la página-->
+        <section class="generar__container flex flex-column gap-2 hidden"> <!--Sección de generación de examenes-->
+            <h2 class="generar__title">Generar Examen</h2>
+            <p class="paragraph">Acá te ayudaremos a generar tu examen para prácticar</p>
+
+            <div id="cards" class="cards flex gap-2 space-between"> <!--Contenedor de cards donde se elige el nivel/grado a evaluar-->
+                <div id="primaria" class="card flex space-between">
+                    <img src="img/primaria.png" alt="" class="card__img">
+                    <h3 class="card__title">Primaria</h3>
+                    <p class="card__paragraph">(1) Sed sodales tristique quam et ultricies. Vivamus ex risus, condimentum at rhoncus et, aliquet in nisi. Etiam magna quam, sodales nec hendrerit aliquet, ultrices eget sapien. Etiam felis magna, feugiat nec tincidunt non, viverra sed quam.</p>
+                    <button class="btn">Seleccionar</button>
+                </div>
+
+                <div id="secundaria" class="card flex">
+                    <img src="img/secundaria.png" alt="" class="card__img">
+                    <h3 class="card__title">Secundaria</h3>
+                    <p class="card__paragraph">(2) In aliquam quis mi vel rhoncus. Phasellus est ante, malesuada et diam at, aliquam eleifend orci, elementum aliquam dapibus sit amet, facilisis at ligula. Sed dapibus iaculis neque, condimentum tincidunt arcu.</p>
+                    <button class="btn">Seleccionar</button>
+                </div>
+
+                <div id="universidad" class="card flex">
+                    <img src="img/universidad.png" alt="" class="card__img">
+                    <h3 class="card__title">Universidad</h3>
+                    <p class="card__paragraph">(4) Sed sodales augue felis, at ultricies magna facilisis sit amet. Duis tristique bibendum lacus, id pharetra odio sodales ut. Aliquam aliquam cursus mi, vitae porta ante tempus in. Proin eleifend.</p>
+                    <button class="btn">Seleccionar</button>
+                </div>
+
+                <div id="fp" class="card flex">
+                    <img src="img/fp.png" alt="" class="card__img">
+                    <h3 class="card__title">Formacion Profesional</h3>
+                    <p class="card__paragraph">(3) Sed sodales augue felis, at ultricies magna facilisis sit amet. Duis tristique bibendum lacus, id pharetra odio sodales ut. Aliquam aliquam cursus mi, vitae porta ante tempus in. Proin eleifend.</p>
+                    <button class="btn">Seleccionar</button>
+                </div>
+            </div>
+            
+            <section id="niveles__grado" class="niveles__grado hidden flex flex-column gap-2">
+
+                <h2 class="niveles__title">Niveles del grado</h2>
+
+                <div class="nivel nivel__primaria hidden flex flex-column gap-1">
+                    <section id="quinto" class="nivel__contenido flex gap-1 flex-column space-between">
+                        <h2 class="nivel__title">5º Primaria</h2>
+
+                        <div id="matematica__quinto" class="asignatura flex gap-1">
+                            <div class="asignatura__title matematica__quinto flex space-between">
+                                <p class="asignatura__name">Matematica</p>
+                                <img src="icons/left-arrow.svg" alt="left arrow" class="asignatura__img">
+                            </div>
+                            <div id="contenidoMatQuinto" class="contenido matematica__quinto hidden">
+                                <p class="asignatura__contenido">Multiplicacion por varias cifras</p>
+                                <p class="asignatura__contenido">Unidades de longitud, masa y capacidad</p>
+                            </div>
+                        </div>
+
+                        <div id="lengua__quinto" class="asignatura flex flex-column gap-1">
+                            <div class="asignatura__title flex space-between">
+                                <p class="asignatura__name">Lengua</p>
+                                <img src="icons/left-arrow.svg" alt="left arrow" class="asignatura__img">
+                            </div>
+                            <div id="contenidoLegQuinto" class="contenido hidden">
+                                <p class="asignatura__contenido">Palabras Sinonimas, Antonimas, Monosemicas y Polisemicas</p>
+                                <p class="asignatura__contenido">Campo Semantico</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="sexto" class="nivel__contenido flex flex-column gap-1">
+                        <h2 class="nivel__title">6º Primaria</h2>
+
+                        <div id="matematica__sexto" class="asignatura flex flex-column gap-1">
+                            <div class="asignatura__title flex space-between">
+                                <p class="asignatura__name">Matematica</p>
+                                <img src="icons/left-arrow.svg" alt="left arrow" class="asignatura__img">
+                            </div>
+                            <div id="contenidoMatSexto" class="contenido hidden">
+                                <p class="asignatura__contenido">Potencia y Raiz Cuadrada</p>
+                                <p class="asignatura__contenido">M.C.M y M.C.D</p>
+                            </div>
+                        </div>
+
+                        <div id="lengua__sexto" class="asignatura flex flex-column gap-1">
+                            <div class="asignatura__title flex space-between">
+                                <p class="asignatura__name">Lengua</p>
+                                <img src="icons/left-arrow.svg" alt="left arrow" class="asignatura__img">
+                            </div>
+                            <div id="contenidoLegSexto" class="contenido hidden">
+                                <p class="asignatura__contenido">Grupo Nominal</p>
+                                <p class="asignatura__contenido">Verbo</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="nivel nivel__secundaria hidden">
+                    <section id="primero" class="nivel__contenido">
+                        <h2 class="nivel__title">1º ESO</h2>
+
+                        <div id="matematica__primero" class="asignatura flex flex-column gap-1">
+                            <div class="asignatura__title flex space-between">
+                                <p class="asignatura__name">Matematica</p>
+                                <img src="icons/left-arrow.svg" alt="left arrow" class="asignatura__img">
+                            </div>
+                            <div id="contenidoMatPrimero" class="contenido hidden">
+                                <p class="asignatura__contenido">Fracciones Equivalentes</p>
+                                <p class="asignatura__contenido">Calculo de Porcentajes</p>
+                            </div>
+                        </div>
+
+                        <div id="lengua__primero" class="asignatura flex flex-column gap-1">
+                            <div class="asignatura__title flex space-between">
+                                <p class="asignatura__name">Lengua</p>
+                                <img src="icons/left-arrow.svg" alt="left arrow" class="asignatura__img">
+                            </div>
+                            <div id="contenidoLegPrimero" class="contenido hidden">
+                                <p class="asignatura__contenido">Diptongos e Hiatos</p>
+                                <p class="asignatura__contenido">Sustantivo</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="segundo" class="nivel__contenido">
+                        <h2 class="nivel__title">2º ESO</h2>
+
+                        <div id="matematica__segundo" class="asignatura flex flex-column gap-1">
+                            <div class="asignatura__title flex space-between">
+                                <p class="asignatura__name">Matematica</p>
+                                <img src="icons/left-arrow.svg" alt="left arrow" class="asignatura__img">
+                            </div>
+                            <div id="contenidoMatSegundo" class="contenido hidden">
+                                <p class="asignatura__contenido">Divisiones con el divisor decimal</p>
+                                <p class="asignatura__contenido">Suma y resta de fracciones</p>
+                            </div>
+                        </div>
+
+                        <div id="lengua__segundo" class="asignatura flex flex-column gap-1">
+                            <div class="asignatura__title flex space-between">
+                                <p class="asignatura__name">Lengua</p>
+                                <img src="icons/left-arrow.svg" alt="left arrow" class="asignatura__img">
+                            </div>
+                            <div id="contenidoLegSegundo" class="contenido hidden">
+                                <p class="asignatura__contenido">Conjugaciones Verbales</p>
+                                <p class="asignatura__contenido">Perifrasis verbales</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="nivel nivel__universidad hidden">
+                    <section id="grado" class="nivel__contenido">
+                        <h2 class="nivel__title">1º Grado</h2>
+
+                        <div id="grado__primero" class="asignatura flex flex-column gap-1">
+                            <div class="asignatura__title flex space-between">
+                                <p class="asignatura__name">Psicologia Evolutiva</p>
+                                <img src="icons/left-arrow.svg" alt="left arrow" class="asignatura__img">
+                            </div>
+                            <div id="contenidoGradoPsi" class="contenido hidden">
+                                <p class="asignatura__contenido">Desarrollo psicobiologico</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="nivel nivel__fp hidden">
+                    <section id="fp" class="nivel__contenido flex flex-column gap-2">
+                        <h2 class="nivel__title">1º DAM</h2>
+
+                        <div id="fp__primero" class="asignatura flex gap-1">
+                            <div class="asignatura__title flex space-between">
+                                <p class="asignatura__name">Bases de Datos</p>
+                                <img src="icons/left-arrow.svg" alt="left arrow" class="asignatura__img">
+                            </div>
+                            <div id="contenidoDamFp" class="contenido hidden">
+                                <p class="asignatura__contenido">Consultas SQL</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+    
+            <section id="numeroPreguntas" class="section numeroPreguntas hidden"> <!--Selección del número de preguntas que se desean en el examen generado, se establece un mínimo de 1 pregunta hasta un máximo de 20 preguntas-->
+                <h2 class="preguntas__title">¿Cuántas preguntas?</h2>
+                <div class="preguntas__section flex flex-column gap-2">
+                    <label for="numPreguntas" class="label">Introduce el número de preguntas para el examen (1 - 20)</label>
+                    <input type="number" name="numPreguntas" id="numPreguntas" class="input">
+                    <button class="btnEnviar hidden">Enviar</button>
+                    <button class="btnEditar hidden">Editar</button>
+                </div>
+            </section>
+    
+            <section id="numeroOpciones" class="section numeroOpciones hidden"> <!--Selección del número de respuestas que se desean por preguntas en el examen generado, se establece un mínimo de 2 respuestas hasta un máximo de 4 respuestas-->
+                <h2 class="opciones__title">¿Cuántas opciones?</h2>
+    
+                <div class="opciones__section flex flex-column gap-2">
+                    <label for="numOpciones" class="label">Introduce el número de preguntas para el examen (2-4)</label>
+                    <input type="number" name="numOpciones" id="numOpciones" class="input">
+                    <button class="btnEnviar hidden">Enviar</button>
+                    <button class="btnEditar hidden">Editar</button>
+                </div>
+
+            </section>
+
+            <button id="btnGenerar" class="btnGenerar hidden">Generar</button>
+        </section>
+        
+
+        <section class="mostrar__container hidden"> <!--Sección donde se muestran los examenes generados que el usuario ha elegido guardar-->
+            <h2 class="mostrar__title">Examenes Guardados</h2>
+        </section>
+    </main>
+
+    <script src="scripts/scriptGenerar.js"></script>
+    <!-- <script src="scripts/scriptMostrar.js"></script>
+    <script src="scripts/scriptMain.js"></script> -->
+</body>
+</html>
